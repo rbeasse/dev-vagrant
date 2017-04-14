@@ -13,7 +13,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.password = 'vagrant'
 
   config.vm.network :forwarded_port, guest: 80, host: 80
-  config.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
 
   config.vm.provider "virtualbox" do |vb|
     vb.customize [:modifyvm, :id, "--memory", "4096"]
