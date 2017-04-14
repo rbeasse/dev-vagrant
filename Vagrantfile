@@ -30,5 +30,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     run: "always",
     inline: "eval `route -n | awk '{ if ($8 ==\"eth0\" && $2 != \"0.0.0.0\") print \"route del default gw \" $2; }'`"
 
-   config.vm.provision :shell, path: "scripts/install.sh"
+   config.vm.provision :shell, path: "scripts/install.sh", privileged: false
 end
